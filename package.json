@@ -1,0 +1,23 @@
+{
+  "name": "study_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuQ-7148/study_Node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuQ-7148/study_Node.js/issues"
+  },
+  "homepage": "https://github.com/yuQ-7148/study_Node.js#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}

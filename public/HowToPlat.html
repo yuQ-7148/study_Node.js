@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><link href='https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --head: 'Crimson Text';
+  --body: 'Alegreya', sans-serif;
+  --mono: 'Source Code Pro';
+  font-family: var(--body);
+  font-size: 12pt;
+
+  --offwhite: #fcf5e5;
+  --green: #e0e5c1;
+  --yellow: #c9ad6a;
+  --red: #822000;
+  --purple: #704cd9;
+}
+
+/** Background **/
+
+content, .typora-export-content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  background-image: url("file:///C://Users//Always%20Impassion//AppData//Roaming//Typora/themes/torillic/torillic-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+.typora-export-content {
+  top: 0;
+}
+content:after, .typora-export-content:after {
+  content: "Background: Dmitry Demidov via Pexels [#3843969]";
+  position: fixed;
+  bottom: 1cm;
+  left: 0;
+  width: 6.5cm;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: -1;
+  font-size: 8pt;
+  padding: 2mm 3mm;
+  border-radius: 0 2mm 2mm 0;
+}
+
+/** Page **/
+#write, #typora-source {
+  position: relative;
+  margin: 4rem auto;
+  width: 21cm;
+  min-height: 80vh;
+  padding: 2cm;
+  overflow-y: hidden;
+  box-shadow:
+    inset 0cm -0cm 0.1cm 0.05cm rgba(0, 0, 0, 0.1),
+    1cm 1cm 1cm 1cm rgba(0, 0, 0, 0.5);
+  transform-style: preserve-3d;
+  background-image: url("https://www.dndbeyond.com/content/1-0-1895-0/skins/waterdeep/images/mon-summary/paper-texture.png");
+  background-color: var(--offwhite);
+  /* Add columns */
+  column-count: 2;
+  column-gap: 0.5cm;
+  column-width: 8cm;
+}
+#typora-source {
+  font-family: var(--mono) !important;
+  column-count: 1 !important;
+  column-width: auto !important;
+}
+#write p, #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write div, #write pre {
+  width: auto;
+}
+#write > *:first-child {
+  margin-block-start: 0;
+}
+.ty-on-typewriter-mode #write {
+  column-count: 1;
+  padding-bottom: 50%;
+}
+
+/** Responsivity **/
+/* Compress for small windows */
+@media only screen and (max-width: 22cm) {
+  #write, #typora-source {
+    column-count: 1;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+  }
+}
+/* Hide background credit if there's no width */
+@media only screen and (max-width: 37cm) {
+  content:after, .typora-export-content:after {
+    left: -6.1cm
+  }
+}
+
+/** Export **/
+@media print {
+    content, .typora-export-content {
+      position: relative;
+      background: none;
+      overflow-y: visible;
+    }
+    content:after, .typora-export-content:after {
+      display: none;
+    }
+    #write, #typora-source {
+        min-height: 0;
+        padding: 0;
+        overflow-y: visible;
+        box-shadow: none;
+        background: none;
+    }
+}
+
+/** Headings **/
+
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-block-end: 2pt;
+  margin-block-start: 1em;
+  line-height: 1em;
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+/* Major headings */
+h1, h2, h3, h4 {
+  font-family: var(--head);
+  font-weight: 700;
+  font-variant: small-caps;
+  color: var(--red);
+}
+
+/* Individual headings */
+h1 {
+  font-size: 36pt;
+  column-span: all;
+}
+
+h2 {
+  font-size: 28pt;
+  column-span: all;
+}
+
+h3 {
+  font-size: 24pt;
+}
+
+h4 {
+  font-size: 18pt;
+  border-bottom: 1pt solid var(--yellow);
+  border-bottom: 1pt solid var(--yellow);
+}
+h4 a {
+  text-decoration: none;
+}
+
+h5 {
+  font-size: 14pt;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 12pt;
+}
+
+h6 {
+  font-size: 12pt;
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: var(--yellow);
+}
+
+hr {
+  /* Common to all hr's */
+  border-top: 2pt solid transparent;
+  border-bottom: 2pt solid transparent;
+  border-left-style: solid;
+  border-left-color: var(--red);
+
+  /* Top-level hr (aka page delineator) */
+  column-span: all;
+  border-left-width: 16cm;
+  margin-top: 18pt;
+  margin-bottom: 36pt;
+}
+
+blockquote hr {
+  /* Within a blockquote (aka fancy underline) */
+  column-span: none;
+  border-left-width: 6cm;
+  margin-top: 2pt;
+  margin-bottom: 2pt;
+}
+
+/** Body **/
+p {
+  margin-block-start: 2pt;
+  break-inside: avoid;
+}
+
+strong {
+  color: var(--red);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration-color: var(--yellow);
+}
+a:visited {
+  text-decoration-color: var(--green);
+}
+a:hover {
+  color: var(--text-color);
+  text-decoration-color: var(--purple);
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+strong a {
+  color: var(--red);
+}
+
+del {
+  text-decoration-color: var(--red);
+}
+
+mark {
+  background-color: var(--green);
+}
+
+code, pre {
+  background: auto;
+  font-family: var(--mono);
+}
+
+ol, ul {
+  padding-left: 1rem;
+}
+
+li::marker {
+  font-weight: 700;
+  color: var(--red);
+}
+
+/** Tables **/
+table {
+  break-inside: avoid;
+}
+
+thead, th {
+  font-weight: 700;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--green);
+}
+
+blockquote tbody tr:nth-child(odd), pre blockquote tbody tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+td, th {
+  padding: 3pt 6pt;
+}
+
+/** Blocks **/
+pre, pre.md-meta-block {
+  background-color: var(--green);
+  padding: 6pt;
+}
+
+blockquote {
+  background-color: var(--green);
+  padding: 12pt;
+  border-top: 3pt solid var(--red);
+  border-bottom: 3pt solid var(--red);
+  break-inside: avoid;
+}
+
+blockquote blockquote {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/** Images **/
+
+.md-image {
+  z-index: 0;
+}
+
+.md-image:before {
+  position: absolute;
+  top: -1.5cm;
+  left: -1.5cm;
+  right: -1.5cm;
+  bottom: -0.5cm;
+  background-image: url("file:///C://Users//Always%20Impassion//AppData//Roaming//Typora/themes/torillic/splash.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  content: " ";
+  z-index: -1;
+}
+.on-focus-mode .md-image:before {
+  opacity: 0.2;
+}
+
+
+</style><title>HowToPlat</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='第-1-章如何游戏-how-to-plat'><span>第 1 章：如何游戏 How to Plat</span></h1><p>&nbsp;</p><h2 id='骰子-game-dice'><span>骰子 Game Dice</span></h2><hr /><p><span>		</span><span>游戏会用到不同面数的骰子。在桌游店就可以买到这些东西。在本规则中，不同的骰子用字母“d”加后面一个骰子面数表示：即 d4、d6、d8、d10（该骰的 0 代表骰值 10）、d12、d20。比如 d6 即是一粒六面骰。</span></p><p><span>		</span><span>百分骰，也就是 d100 的掷骰方法有些不同。你需要骰两次十面骰来生成 1 到 100 之间的一个值。第一骰给出十位数的值，而第二骰给出个位数。比如若你骰出 7 和 1，结果就是71。两个 0 则代表 100。</span></p><p><span>		</span><span>你需要掷骰时，规则会说明要掷多少枚什么种类的骰子，以及加上多少修正值。比如“3d8+5”意味着你要投三枚八面骰并将各结果相加，最后再加 5 便得出其总值。</span></p><p>&nbsp;</p><h2 id='减半-halving'><span>减半 Halving</span></h2><hr /><p><span>		</span><span>任何需要你对数值减半的时候，其结果均向下取整。例如，15 减半后结果为 7。</span></p><p>&nbsp;</p><h2 id='六项属性-six-abilities'><span>六项属性 Six Abilities</span></h2><hr /><p><span>		</span><span>六项属性值是每个角色与怪物身心特色的核心指标：</span></p><ul><li><p><strong><span>力量</span></strong><span> </span><strong><span>Strength</span></strong><span>，体能的量化</span></p></li><li><p><strong><span>敏捷</span></strong><span> </span><strong><span>Dexterity</span></strong><span>，灵活度的量化</span></p></li><li><p><strong><span>体质</span></strong><span> </span><strong><span>Constitution</span></strong><span>，耐受力的量化</span></p></li><li><p><strong><span>智力</span></strong><span> </span><strong><span>Intelligence</span></strong><span>，记忆与思维能力的量化</span></p></li><li><p><strong><span>感知</span></strong><span> </span><strong><span>Wisdom</span></strong><span>，直觉与感受能力的量化</span></p></li><li><p><strong><span>魅力</span></strong><span> </span><strong><span>Charisma</span></strong><span>，个性气质的量化</span></p></li></ul><p><span>		</span><span>一个角色是否聪敏强壮?是否才智兼备?是否灵敏结实？以</span><strong><span>属性值</span></strong><span> </span><strong><span>ability</span><span>	</span><span>score</span></strong><span> 评估的角色或怪物其数值通常在 3 至10 之间。角色的属性值上限为 20。怪物的属性值上限则是 30。</span></p><p><span>		</span><span>属性值最重要的作用是衍生出相应的</span><strong><span>属性调整值</span></strong><span> </span><strong><span>ability</span></strong><span>	</span><strong><span>modifiers</span></strong><span>。其数值范围从-1（对应数值为 8 或 9），到+4（对应数值为 18）。这些调整值应用于属性检定、豁免检定和攻击检定，如后文所述。</span></p><p><strong><span>属性值与调整值 Ability</span><span>	</span><span>Scores</span><span>	</span><span>and</span><span>	</span><span>Modifiers</span></strong></p><figure><table><thead><tr><th style='text-align:center;' ><span>属性值</span></th><th style='text-align:center;' ><span>调整值</span></th></tr></thead><tbody><tr><td style='text-align:center;' ><span>1</span></td><td style='text-align:center;' ><span>-5</span></td></tr><tr><td style='text-align:center;' ><span>2~3</span></td><td style='text-align:center;' ><span>-4</span></td></tr><tr><td style='text-align:center;' ><span>4~5</span></td><td style='text-align:center;' ><span>-3</span></td></tr><tr><td style='text-align:center;' ><span>6~7</span></td><td style='text-align:center;' ><span>-2</span></td></tr><tr><td style='text-align:center;' ><span>8~9</span></td><td style='text-align:center;' ><span>-1</span></td></tr><tr><td style='text-align:center;' ><span>10~11</span></td><td style='text-align:center;' ><span>+0</span></td></tr><tr><td style='text-align:center;' ><span>12~13</span></td><td style='text-align:center;' ><span>+1</span></td></tr><tr><td style='text-align:center;' ><span>14~15</span></td><td style='text-align:center;' ><span>+2</span></td></tr><tr><td style='text-align:center;' ><span>16~17</span></td><td style='text-align:center;' ><span>+3</span></td></tr><tr><td style='text-align:center;' ><span>18~19</span></td><td style='text-align:center;' ><span>+4</span></td></tr><tr><td style='text-align:center;' ><span>20~21</span></td><td style='text-align:center;' ><span>+5</span></td></tr><tr><td style='text-align:center;' ><span>22~23</span></td><td style='text-align:center;' ><span>+6</span></td></tr><tr><td style='text-align:center;' ><span>24~25</span></td><td style='text-align:center;' ><span>+7</span></td></tr><tr><td style='text-align:center;' ><span>26~27</span></td><td style='text-align:center;' ><span>+8</span></td></tr><tr><td style='text-align:center;' ><span>28~29</span></td><td style='text-align:center;' ><span>+9</span></td></tr><tr><td style='text-align:center;' ><span>30</span></td><td style='text-align:center;' ><span>+10</span></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='核心规则-the-core-rule'><span>核心规则 The Core Rule</span></h2><hr /><p><span>		</span><strong><span>1.掷骰并加上调整值。</span></strong><span>骰一次 d20 并加上相应的调整值。比如敏捷豁免要使用你的敏捷调整值。</span></p><p><span>		</span><strong><span>2.视情况加入加值和减值。</span></strong><span>法术、特殊情况以及一些其他的效应都可能带来加值或减值。</span></p><p><span>		</span><strong><span>3.将总值跟目标值相比较。</span></strong><span>如果总值等于或大于目标值，则相应的属性检定，攻击检定或豁免检定即判为成功，否则判为失败 。属性检定和豁免检定的目标值称为 难度等级Difficulty</span><span>	</span><span>CLass（DC）。攻击检定的目标值称为护甲等级 Armor</span><span>	</span><span>Class（AC）。通常会由 DM 告诉玩家相应的属性检定、攻击检定和豁免检定的结果是成功还是失败。</span></p><p>&nbsp;</p><h2 id='优势与劣势-advantage-and-disadvantage'><span>优势与劣势 Advantage and Disadvantage</span></h2><hr /><p><span>		</span><span>有时一次属性检定，攻击检定或豁免检定会被称作优势或劣势的特殊情况所调整。优势反映了积极的影响，而劣势则相反。当你具有优势或劣势时，你在掷 d20 时要额外掷一枚d20。如果你有优势则取更高的值，劣势则取较低的值。比如你具有劣势并掷出 17 和 5，那么你必须采用 5。如果你在具有优势时掷出同样的两个数，则你必须采用 17。</span></p><p><span>		</span><span>当有多个情况使你同时具有复数的优势或劣势时，你都只能额外掷一次 d20。例如，当两项有利情况都使你具有优势，则你依然只额外掷一次 d20。</span></p><p><span>		</span><span>如果某次掷骰同时具有优势和劣势，则两边效果互相抵消，即你只掷一次 d20。即使两边的数量不对等也一样。此时，你视为没有优势也没有劣势。</span></p><p><span>		</span><span>当你具有优势或劣势，且可以重掷 d20 时（比如半身人的“幸运”特质），你可以选择重掷两粒骰中的某一个。例如，一名半身人进行一次具有优势或劣势的属性检定，并掷出 1 和13，则他可以使用其特性重掷骰值 1 的掷骰。</span></p><p>&nbsp;</p><h2 id='属性检定-ability-checks'><span>属性检定 Ability Checks</span></h2><hr /><p><span>		</span><span>属性检定用以判定角色或怪物的天赋和训练是否足以克服某项考验。当角色或怪物试图执行一个动作（非攻击动作）时，如果 DM 认为其结果有可能失败，则需要进行属性检定。即让未知的未来交由掷骰决定。角色需要强行撬门时会需要一次力量检定，思考线索时需要进行一次智力检定，发现地精在路边伏击时则需要进行感知检定。事情的后果不明朗时，就需要骰子来作决定。</span></p><p><span>		</span><span>进行属性检定的过程如下：你骰一次 d20 并加上适用的属性调整值。跟其他 d20 掷骰一样，加上各种适用的加值或减值后，再将总结果跟 DC 相比。如果你的总值大于等于 DC，则检定成功。即意味着进行检定的生物克服了眼前的难关。否则就是检定失败，即意味着该角色或怪物在该事件上可能没有进展，也可能是进展缓慢，其具体情况由 DM 作最终判定。</span></p><p><span>		</span><span>通常冒险书会告诉 DM 需要进行哪种检定、检定的 DC 多少以及角色检定成功或失败的后果为何。不过角色们有时会作出一些难以预料的事，此时冒险书里会列出一些建议事项以帮助 DM 针对情况作最终判定。</span></p><p>&nbsp;</p><p><strong><span>熟练加值</span></strong><span> </span><strong><span>Proficiency Bonus</span></strong></p><p><span>		</span><span>你可能特别擅长与某属性检定相关的行动。角色卡中有列明每个角色的技能和特殊工具熟练项，而冒险书中的怪物资料则显示了怪物的相关熟练项。如果你熟练某技能，比如体操或欺瞒（如下文所述），则你可以将自己的熟练加值加到相应的属性检定中，以表示你能熟练运用这项技能。如果你熟练某工具，比如盗贼工具或石匠工具，你就可以在使用这些工具进行属性检定时加上你的熟练加值。同一次检定中加上熟练加值的操作不能超过一次。</span></p><p>&nbsp;</p><p><strong><span>对抗</span></strong><span> </span><strong><span>Contests</span></strong></p><p><span>		</span><span>角色或怪物的活动有时候会出现互相对立的状况。这种检定对抗，会发生在双方都想做同一件事而只有一人可以成功时（比如两人同时抢夺掉一只落地上的魔法戒指）。另一种情况即是一方在积极阻拦另一方达成某种目的时（比如有怪物想推开门而冒险者在另一边顶着门不给推）。这些情况由一种特别的属性检定决定结果，称为对抗。</span></p><p><span>		</span><span>参与对抗的双方必须先分别进行其活动相关的属性检定。适用于一般属性检定的加值和减值都适用于对抗，只是其结果不与 DC 作比较，而是将双方的检定结果相比。</span></p><p><span>		</span><span>检定总值较高的一方角色胜出该对抗，即其成功完成行动或者成功阻止了对手。</span></p><p><span>		</span><span>如果结果出现平局，则情况维持跟对抗前一样不变。其中的某方可能会在此预设情况下默认为胜出。在抢夺戒指的情况下，大家都抢不到。而在互相推门的情况下，则是依然如顶门一方所愿紧闭着门。</span></p><p>&nbsp;</p><p><strong><span>技能</span></strong><span> </span><strong><span>Skills</span></strong></p><p><span>		</span><span> 每项属性涵盖了广泛的能力范畴，其中包括角色或怪物可以熟练掌握的技能项。每项技能都代表了一项属性在某方面的特定表现，而技能熟练项则反映了该角色在这方面的专注培养。角色的起始技能熟练项在创造角色时决定，而怪物的技能熟练项则会在其属性数据中说明。</span></p><p><span>		</span><span>例如，敏捷检定可能代表角色尝试进行体操特技、藏起一个物件或者躲起来等行动的能力。此三项敏捷相关的活动都有对应的技能，即体操、巧手和隐匿。因此，拥有隐匿技能熟练项的角色会特别擅长进行躲藏相关的敏捷检定。</span></p><p><span>		</span><span>有时候，DM 会在进行属性检定时指名所关联的特定技能，例如“进行一次感知（观察）检定”。另外，玩家也可以主动向 DM 提出使用某项技能进行某次特定的属性检定。两种情况下，拥有相应技能熟练项的角色都可以将其熟练加值加到相应技能的属性检定中。不具有相应熟练项时，该角色只进行普通的属性检定。</span></p><p><span>		</span><span>例如，想要爬上危险峭壁的角色可能要应 DM 要求进行一次力量（运动）检定。如果该角色具有运动技能的熟练项，则他可以将其熟练加值加到这次力量检定中。如果没有该熟练项，则他只进行普通的力量检定。</span></p><p>&nbsp;</p><h2 id='力量检定-strength-checks'><span>力量检定 Strength Checks</span></h2><hr /><p><span>		</span><span>力量检定可以对应举重、推、拉、暴力破坏、推挤或其他使用蛮力的情况。运动技能反映了某几类力量检定可以表示的能力。</span></p><p><span>		</span><strong><span>运动</span></strong><span> </span><strong><span>Athletics</span></strong><span>。力量（运动）检定涵盖了进行攀爬、跳跃、游泳时遇上的困难情况。其范例如下：</span></p><ul><li><p><span>你尝试攀爬陡坡或滑坡或者在攀爬的同时回避危害物，又或者在有东西想撞开你的情况下抓紧壁面。</span></p></li><li><p><span>你尝试跳跃非常远的距离或在跳跃中施展花式。</span></p></li><li><p><span>你尝试在凶险的水流，风暴浪涛或水草海域中挣扎游泳或浮出水面。或者其他生物试图将你推下水，或拉入水中，又或者以其他方式阻碍你游泳。</span></p></li></ul><p>&nbsp;</p><h2 id='敏捷检定-dexterity-checks'><span>敏捷检定 Dexterity Checks</span></h2><p><span>		</span><span>敏捷检定可以对应进行灵巧、迅速、安静的移动，或在不稳定的地方保持平衡。体操、巧手、隐匿等技能分别反映了某几类敏捷检定可以表示的能力。</span></p><p><span>		</span><strong><span>体操</span></strong><span> </span><strong><span>Acrobatics</span></strong><span>。敏捷（体操）检定涵盖了在冰块上奔跑，在绳索上平衡，在摇曳加班上站稳等需要保持平衡的情况。DM也可能用敏捷（体操）检定来判定你能否完成体操特技，如前翻、侧翻、空翻、后翻等。</span></p><p><span>		</span><strong><span>巧手</span></strong><span> </span><strong><span>Sleight</span><span>	</span><span> of</span><span>	</span><span>Hand</span></strong><span>。每当你尝试施行障眼法或巧手时（如把一些东西放在他人身上，或者将一件东西藏在自已身上），进行一次敏捷（巧手）检定。DM 也可能会用敏捷（巧手）检定以判定你是否能从其他人的钱包或口袋中摸鱼。</span></p><p><span>		</span><strong><span>隐匿</span></strong><span> </span><strong><span>Stealth</span></strong><span>。你尝试躲起来避过敌人，躲过守卫，偷偷溜走，无声息地绕到某人背后时，进行一次敏捷（隐匿）检定。</span></p><blockquote><p><strong><span>躲藏与视力</span></strong><span> </span><strong><span>Hiding and Vision</span></strong></p><p><span>		</span><span>DM 可以决定情况是否允许进行躲藏。当你尝试躲藏时，可以进行一个敏捷（隐匿）检定。此后，直到你被发现或主动停止躲藏为止，该检定的总值将作为一个固定的对抗值存在。而任何主动以感知（察觉）检定搜索你的生物，都将用其检定值与你该固定值作对抗，以判定是否发现你的存在。</span></p><p><span>		</span><span>你不能针对一个可以清楚看见你的生物进行躲藏，而你一旦发出声响（如大声发出警告，或踢破一个罐子）也会立即暴露你的位置。隐形中的生物可以随时尝试躲藏。尽管其踪迹依然可能会被注意到，但它就算不保持安静也不会因此暴露自己的位置。</span></p><p><span>		</span><em><span>被动察觉</span></em><span> </span><strong><span>Passive</span><span>	</span><span> Perception*</span></strong><span>。*你在躲藏时，某些生物就算不主动搜索依然可以注意到你。DM 可以用你的敏捷（隐匿）检定与其他生物的被动感知（察觉）值作对抗，同时加上其他加值或减值。生物具有优势时，其分值加 5，劣势则减 5。</span></p><p><span>		</span><span>例如，一名 1 级角色（熟练加值为 +2）感知为 15（调整值为 +2），且拥有察觉技能的熟练项，其被动感知（察觉）值为 14。</span></p><p><span>		</span><em><span>你能看到什么</span></em><span> </span><strong><span>What Can</span><span>	</span><span> You</span><span>	</span><span>See*</span></strong><span>？*你能否看到一个躲起来的生物或物件的一个主要因素，即为你在该区域中的能见度是处于轻度 lightly 还是重度遮蔽 heavily</span><span>	</span><span>obscured 状态。一处空间可以处于轻度或重度遮蔽。处于</span><strong><span>轻度遮蔽</span></strong><span> </span><strong><span>lightly</span><span>	</span><span> obstructed</span></strong><span> 的空间包括微光光照、薄雾笼罩、适中的植物覆盖等环境。其内生物基于视觉的感知（察觉）检定具有劣势。处于</span><strong><span>重度遮蔽</span></strong><span> </span><strong><span>heavily</span><span>	</span><span>obstructed</span></strong><span>的空间包括黑暗光照、浓雾笼罩、浓密的植物覆盖等视觉几乎完全被遮蔽的环境。重度遮蔽不会使你陷入目盲，但当你尝试去看处于受重度遮蔽中的事物时，则等同于处于目盲状态（见附录 A）。</span></p></blockquote><p>&nbsp;</p><h2 id='体质检定-constitution-chexks'><span>体质检定 Constitution Chexks</span></h2><hr /><p><span>		</span><span>体质检定并不常见，也没有对应的技能，因为这属性值所反映的肉体耐力通常是被动地受考验的，而不是角色或怪物去主动使用的。话虽如此，体质检定可以对应超越突破极限的努力。</span></p><p>&nbsp;</p><h2 id='智力检定-intelligence-checks'><span>智力检定 Intelligence Checks</span></h2><hr /><p><span>		</span><span>智力检定可以对应需要使用推理、教育、记忆的状态。奥秘、历史、调查、自然、宗教等技能分别反映了某几类智力检定可以表示的能力。</span></p><p><span>		</span><strong><span>奥秘</span></strong><span> </span><strong><span>Arcana</span></strong><span>。你的智力（奥秘）检定量化你忆起关于法术、魔法物品、奥秘符文、魔法派系、位面、位面住民等相关知识的能力。</span></p><p><span>		</span><strong><span>历史</span></strong><span> </span><strong><span>History</span></strong><span>。你的智力（历史）检定量化你忆起关于历史事件、传奇人物、古王国、昔日纠纷、近代战争、失落文明等相关知识的能力。</span></p><p><span>		</span><strong><span>调查</span></strong><span> </span><strong><span>Investigation</span></strong><span>。当你到处嗅探线索并以此进行推理时，进行一次智力（调查）检定。你可能要推断隐藏物件的位置，或从伤口的外观判断它由什么武器造成，又或者找出一条隧道的结构性弱点。在一堆古书卷中寻找一段隐藏的知识也可能需要进行一次智力（调查）检定。</span></p><p><span>		</span><strong><span>自然</span></strong><span> </span><strong><span>Nature</span></strong><span>。你的智力（自然）检定量化你忆起关于地势、动植物、气候、自然周期相关知识的能力。</span></p><p><span>		</span><strong><span>宗教</span></strong><span> </span><strong><span>Religion</span></strong><span>。你的智力（宗教）检定量化你回忆神祇、仪式和祷告、宗教阶级、圣徽、秘密组织风俗等知识的能力。</span></p><p>&nbsp;</p><h2 id='感知检定-wisdom-checks'><span>感知检定 Wisdom Checks</span></h2><hr /><p><span>		</span><span>感知检定可以对应理解肢体语言、同理心、感受环境、照顾伤患等活动。驯兽、洞悉、医药、观察、生存等技能分别反映了某几类感知检定可以表示的能力。</span></p><p><span>		</span><strong><span>驯兽</span></strong><span> </span><strong><span>Animal</span><span>	</span><span>Handling</span></strong><span>。当不确定你是否能驯服一只牲畜，安抚坐骑使其免受惊吓，或者推断出动物的意向时，进行一次感知（驯兽）检定。骑乘时，如果你尝试作出一些危险动作，也会需要进行一次感知（驯兽）检定去控制你的坐骑。</span></p><p><span>		</span><strong><span>洞悉</span></strong><span> </span><strong><span>Insight</span></strong><span>。感知（洞悉）检定决定你是否能辨别另一人的真实意图，例如辨别谎言或预测其下一步行动。你需要理解对方的肢体语言、言谈举止、态度转变等，再察觉其中的含义。</span></p><p><span>		</span><strong><span>医药</span></strong><span> </span><strong><span>Medicine</span></strong><span>。感知（医药）检定让你可以尝试稳定濒死战友的伤势或者诊断病症。</span></p><p><span>		</span><strong><span>察觉</span></strong><span> </span><strong><span>Perception</span></strong><span>。使用感知（察觉）检定让你可以看到，听到或以其他方式察觉到某些东西的存在。它代表你对周围环境的警觉性，以及你感官的敏锐度。例如，偷听门后的对话，或者在窗外窃听，又或者听到在林中静静移动的生物。你也可以尝试看清被遮蔽或容易看走眼的东西，如在前方埋伏的兽人，躲在暗巷的痞子，或是从密门的门缝间漏出的烛光。</span></p><p><span>		</span><strong><span>求生</span></strong><span> </span><strong><span>Survival</span></strong><span>。当你需要追踪，狩猎，引导队伍穿过冰原，辨认附近枭熊踪迹，预测天气，回避流沙或其他自然危害物时，DM 可能会要求你进行一次感知（生存）检定。</span></p><p>&nbsp;</p><h2 id='魅力检定-charisma-checks'><span>魅力检定 Charisma Checks</span></h2><hr /><p><span>		</span><span>魅力检定可以对应使人改变心意、娱人、留下深刻印像、说谎、应酬等活动。欺暪、威吓、表演、游说等技能分别反映了一些魅力检定代表的能力。</span></p><p><span>		</span><strong><span>欺瞒</span></strong><span> </span><strong><span>Deception</span></strong><span>。魅力（欺瞒）检定决定你能否可信地隐暪真相，不论是言语还是动作。由模棱两可地误导人到弥天大谎都包括在内。常见情况包括暪过守卫、骗过商人、从赌局赚钱、以易容暪天过海、安抚他人的怀疑、带着朴克脸撒大谎等。</span></p><p><span>		</span><strong><span>威吓</span></strong><span> </span><strong><span>Intimidation</span></strong><span>。当你尝试用威胁、敌对行为、暴力等使他人改变心意时，进行一次魅力（威吓）检定。例子包括迫供、吓退痞子、用破瓶的利口“说服”高官三思等。</span></p><p><span>		</span><strong><span>表演</span></strong><span> </span><strong><span>Performance</span></strong><span>。你的魅力（表演）检定决定你能多好地用音乐，舞蹈，扮演，卖艺，说书，或其他方式娱乐观众。</span></p><p><span>		</span><strong><span>游说</span></strong><span> </span><strong><span>Persuasion</span></strong><span>。当你尝试圆滑、优雅、善意地游说某人或某些人时，DM 可能会要求你进行一次魅力（游说）检定。通常你会用游说去表示信任，促进友谊，诚恳地请求，或展示恰当的礼仪。例子包括说服官务大臣让你跟国王会面，商谈多族间的和平契约，或激励一帮村民。</span></p><p>&nbsp;</p><h2 id='豁免检定-saving-throws'><span>豁免检定 Saving Throws</span></h2><hr /><p><span>		</span><span> 豁免检定或简称豁免。它代表你面对法术、陷阱、毒素、疾病或其他类似威胁时所作的抵抗。一般情况下，你不能随意进行豁免。所谓的豁免检定是当你的角色或怪物受到威胁时被迫作出的行为。</span></p><p><span>		</span><span>进行豁免检定过程如下：掷一粒 d20，并加上适用的属性调整值（例如敏捷豁免用敏捷调整值）。</span></p><p><span>		</span><span>豁免检定可以由 DM 决定是否具有优势或劣势，以作为其增益或减益。</span></p><p><span>		</span><span>每种职业都会拥有至少两种豁免的熟练项。例如，法师就拥有智力豁免的熟练项。豁免熟练项的作用与技能熟练项一样，具有某属性豁免熟练项的角色进行相应属性豁免时，可以将其熟练加值加入豁免检定的结果中。另外，某些怪物也有特定的豁免熟练项。</span></p><p><span>		</span><span>豁免检定的难度等级由引发豁免的效应决定。例如，法术引发豁免时，其DC取决于施术者的施法关键属性和熟练加值。</span></p><p><span>		</span><span>DM 可以因应环境和形势给予豁免加值或减值，而豁免成功或失败的后果也会在引发它的效应中进行说明。通常豁免成功的生物都能回避或减低可能需要承受的伤害。</span></p></div></div>
+</body>
+</html>

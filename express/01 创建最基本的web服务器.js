@@ -35,6 +35,11 @@ const app = express()
 app.use('/public', express.static(path.join(__dirname, '../public')))
 
 // 3.启动 web 服务器
-app.listen(8080, () => {
+app.listen(8080, '0.0.0.0', () => {
     console.log('express server running at http://127.0.0.1:8080')
 })
+
+// 4.输入 '0.0.0.0' 发布到局域网
+// app.listen(8080, '0.0.0.0', () => {
+//     console.log('express server running at http://127.0.0.1:8080')
+// })

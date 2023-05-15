@@ -1,10 +1,10 @@
 // 1.导入 express
-const exoress = require('express')
+const express = require('express')
 
 // 2.创建路由对象
 const router = express.Router()
 
-// 3.挂在路由对象
+// 3.挂载路由对象
 router.get('/user/list', (req, res) => {
     res.send('Get user list.')
 })
